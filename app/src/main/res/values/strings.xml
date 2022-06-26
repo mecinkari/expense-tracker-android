@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Expense Tracker</string>
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
+
+    <string-array name="jenis_expenses">
+        <item>Income</item>
+        <item>Expense</item>
+    </string-array>
+</resources>
