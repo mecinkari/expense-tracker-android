@@ -14,25 +14,33 @@
         android:layout_weight="1"
         />
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="124dp"
+        android:src="@drawable/monetization"
+        app:tint="@color/sky_800"/>
+
     <Button
         android:id="@+id/btn_saldo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Saldo"/>
+        android:layout_marginTop="16dp"
+        android:text="Dashboard"/>
 
     <Button
         android:id="@+id/btn_list_expenses"
         android:layout_marginTop="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="List Expenses"/>
+        android:text="List Data"/>
 
     <Button
         android:id="@+id/btn_tentang"
         android:layout_marginTop="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Tetang Aplikasi"/>
+        android:text="Tetang Aplikasi"
+        android:visibility="gone"/>
 
     <View
         android:layout_width="wrap_content"

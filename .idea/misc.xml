@@ -5,8 +5,10 @@
       <map>
         <entry key="..\:/Users/ASUS/.gradle/caches/transforms-3/3b1bc201b3bca652ca8cba6f27421397/transformed/appcompat-1.4.1/res/layout/support_simple_spinner_dropdown_item.xml" value="0.1" />
         <entry key="..\:/android_projects/ExpenseTracker/app/src/main/res/drawable/add_logo.xml" value="0.2075" />
+        <entry key="..\:/android_projects/ExpenseTracker/app/src/main/res/drawable/arrow_down.xml" value="0.2075" />
+        <entry key="..\:/android_projects/ExpenseTracker/app/src/main/res/drawable/arrow_up.xml" value="0.2075" />
         <entry key="..\:/android_projects/ExpenseTracker/app/src/main/res/layout/activity_edit.xml" value="0.22" />
-        <entry key="..\:/android_projects/ExpenseTracker/app/src/main/res/layout/activity_list_expenses.xml" value="0.1" />
+        <entry key="..\:/android_projects/ExpenseTracker/app/src/main/res/layout/activity_list_expenses.xml" value="0.18" />
         <entry key="..\:/android_projects/ExpenseTracker/app/src/main/res/layout/activity_main.xml" value="0.1859375" />
         <entry key="..\:/android_projects/ExpenseTracker/app/src/main/res/layout/activity_saldo.xml" value="0.26875" />
         <entry key="..\:/android_projects/ExpenseTracker/app/src/main/res/layout/activity_tambah.xml" value="0.2" />

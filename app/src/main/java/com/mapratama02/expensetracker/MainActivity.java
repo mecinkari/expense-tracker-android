@@ -40,4 +40,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    // <a href='https://www.freepik.com/vectors/money-illustration'>Money illustration vector created by pch.vector - www.freepik.com</a>
 }

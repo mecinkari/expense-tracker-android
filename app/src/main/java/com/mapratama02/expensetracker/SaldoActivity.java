@@ -2,20 +2,28 @@ package com.mapratama02.expensetracker;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.mapratama02.expensetracker.adapters.CustomCursorAdapter;
 import com.mapratama02.expensetracker.adapters.DBHelper;
 
 import java.text.NumberFormat;
 import java.util.Currency;
 
-public class SaldoActivity extends AppCompatActivity {
+public class SaldoActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     private static final String TAG = "SaldoActivity";
+
+    ListView lv;
+    Context ctx;
     DBHelper dbHelper;
     TextView tvSaldo, tvTotalIncome, tvTotalExpense;
     int saldo = 0, incomes = 0, expenses = 0;
@@ -24,6 +32,10 @@ public class SaldoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_saldo);
+
+        setTitle("Dashboard");
+
+        lv = findViewById(R.id.lvRecent);
 
         dbHelper = new DBHelper(this);
         NumberFormat formatter = NumberFormat.getCurrencyInstance();
@@ -60,5 +72,25 @@ public class SaldoActivity extends AppCompatActivity {
         saldo = incomes - expenses;
         String saldoTxt = formatter.format(saldo).toString();
         tvSaldo.setText(saldoTxt);
+
+        lv.setOnItemClickListener(this);
+        setupListView();
+    }
+
+    private void setupListView(){
+        Cursor cur = dbHelper.getLimitData(5);
+        CustomCursorAdapter customCursorAdapter = new CustomCursorAdapter(this, cur, 1);
+        lv.setAdapter(customCursorAdapter);
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        setupListView();
     }
 }

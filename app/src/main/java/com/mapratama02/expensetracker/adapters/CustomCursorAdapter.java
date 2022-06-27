@@ -3,6 +3,7 @@ package com.mapratama02.expensetracker.adapters;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.os.Build;
 import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
@@ -10,6 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CursorAdapter;
 import android.widget.TextView;
+
+import androidx.core.content.ContextCompat;
 
 import com.mapratama02.expensetracker.R;
 
@@ -52,9 +55,16 @@ public class CustomCursorAdapter extends CursorAdapter {
         format.setCurrency(Currency.getInstance("IDR"));
 
         holder.rowId.setText(cursor.getString(0));
-        holder.rowNama.setText(cursor.getString(1));
-        holder.rowJumlah.setText(format.format(Integer.parseInt(cursor.getString(2))).toString());
+        holder.rowNama.setText(cursor.getString(1).toUpperCase());
         holder.rowJenis.setText(cursor.getString(3));
+
+        if (cursor.getString(3).equals("Income")){
+            holder.rowJumlah.setTextColor(ContextCompat.getColor(context, R.color.green_400));
+            holder.rowJumlah.setText("+" + format.format(Integer.parseInt(cursor.getString(2))));
+        } else {
+            holder.rowJumlah.setTextColor(ContextCompat.getColor(context, R.color.red_400));
+            holder.rowJumlah.setText("-" + format.format(Integer.parseInt(cursor.getString(2))));
+        }
     }
 
     class MyHolder{

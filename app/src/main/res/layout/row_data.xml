@@ -2,11 +2,10 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_margin="16dp"
-    android:elevation="16dp"
-    app:cardMaxElevation="12dp"
+    android:layout_margin="12dp"
+    android:elevation="12dp"
     app:cardUseCompatPadding="true"
-    app:contentPadding="20dp"
+    app:contentPadding="12dp"
     android:layout_height="wrap_content">
 
     <LinearLayout
@@ -24,8 +23,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Uang Komisi"
-                android:textColor="@color/black"
-                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/gray_800"
+                android:textSize="14sp"
                 />
 
             <View
@@ -40,6 +40,7 @@
                 android:text="Income"
                 android:textColor="@color/black"
                 android:textSize="16sp"
+                android:visibility="gone"
                 />
 
         </LinearLayout>
@@ -56,7 +57,7 @@
 
         <TextView
             android:id="@+id/etRowId"
-            android:visibility="visible"
+            android:visibility="gone"
             android:text="ID disini"
             android:textSize="10sp"
             android:layout_width="wrap_content"

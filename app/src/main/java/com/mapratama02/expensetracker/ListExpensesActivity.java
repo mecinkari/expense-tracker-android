@@ -25,6 +25,7 @@ public class ListExpensesActivity extends AppCompatActivity implements AdapterVi
 
 
     ListView lv;
+    TextView tvDataKosong;
     DBHelper dbHelper;
     Context ctx;
     CardView cv;
@@ -40,6 +41,7 @@ public class ListExpensesActivity extends AppCompatActivity implements AdapterVi
 
         // Cari id
         FloatingActionButton addBtn = findViewById(R.id.addBtn);
+        tvDataKosong = findViewById(R.id.tvDataKosong);
         lv = (ListView) findViewById(R.id.listView);
 
         // Fungsi untuk klik pada addBtn
@@ -57,8 +59,16 @@ public class ListExpensesActivity extends AppCompatActivity implements AdapterVi
 
     private void setupListView(){
         Cursor cur = dbHelper.allData();
-        CustomCursorAdapter customCursorAdapter = new CustomCursorAdapter(this, cur, 1);
-        lv.setAdapter(customCursorAdapter);
+        int rowCount = dbHelper.allData().getCount();
+        if (rowCount > 0) {
+            CustomCursorAdapter customCursorAdapter = new CustomCursorAdapter(this, cur, 1);
+            lv.setVisibility(View.VISIBLE);
+            tvDataKosong.setVisibility(View.GONE);
+            lv.setAdapter(customCursorAdapter);
+        } else {
+            lv.setVisibility(View.GONE);
+            tvDataKosong.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override

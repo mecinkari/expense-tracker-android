@@ -45,6 +45,11 @@ public class DBHelper extends SQLiteOpenHelper {
         return cur;
     }
 
+    public Cursor getLimitData(int limit){
+        Cursor cur = db.rawQuery("SELECT * FROM " + TBL_NAME + " ORDER BY " + ROW_ID + " DESC LIMIT " + limit, null);
+        return cur;
+    }
+
     // Ambil data berdasarkan ID
     public Cursor getOneData(int id){
         Cursor cur = db.rawQuery("SELECT * FROM " + TBL_NAME + " WHERE " + ROW_ID + "=" + id, null);
