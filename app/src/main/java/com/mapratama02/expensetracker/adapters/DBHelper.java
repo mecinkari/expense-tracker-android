@@ -41,19 +41,16 @@ public class DBHelper extends SQLiteOpenHelper {
 
     // Ambil semua data
     public Cursor allData(){
-        Cursor cur = db.rawQuery("SELECT * FROM " + TBL_NAME + " ORDER BY " + ROW_ID + " DESC", null);
-        return cur;
+        return db.rawQuery("SELECT * FROM " + TBL_NAME + " ORDER BY " + ROW_ID + " DESC", null);
     }
 
     public Cursor getLimitData(int limit){
-        Cursor cur = db.rawQuery("SELECT * FROM " + TBL_NAME + " ORDER BY " + ROW_ID + " DESC LIMIT " + limit, null);
-        return cur;
+        return db.rawQuery("SELECT * FROM " + TBL_NAME + " ORDER BY " + ROW_ID + " DESC LIMIT " + limit, null);
     }
 
     // Ambil data berdasarkan ID
     public Cursor getOneData(int id){
-        Cursor cur = db.rawQuery("SELECT * FROM " + TBL_NAME + " WHERE " + ROW_ID + "=" + id, null);
-        return cur;
+        return db.rawQuery("SELECT * FROM " + TBL_NAME + " WHERE " + ROW_ID + "=" + id, null);
     }
 
     // Insert data
@@ -73,13 +70,6 @@ public class DBHelper extends SQLiteOpenHelper {
 
     // Hitung seluruh data Income
     public Cursor getAllIncomesOrExpenses(String jenis){
-        Cursor cur = db.rawQuery("SELECT SUM(" + ROW_JUMLAH + ") FROM " + TBL_NAME + " WHERE " + ROW_JENIS + "='" + jenis + "'", null);
-        return cur;
+        return db.rawQuery("SELECT SUM(" + ROW_JUMLAH + ") FROM " + TBL_NAME + " WHERE " + ROW_JENIS + "='" + jenis + "'", null);
     }
-
-    // Hitung seluruh data Expense
-//    public Cursor getAllExpenses(){
-//        Cursor cur = db.rawQuery("SELECT SUM(" + ROW_JENIS + ") FROM " + TBL_NAME + " WHERE " + ROW_JENIS + "=Expense", null);
-//        return cur;
-//    }
 }
