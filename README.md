@@ -11,10 +11,15 @@
 > - Syadza Ghalda Aufa 
 
 Aplikasi open source ini ditujukan untuk memanajemen pemasukaan dan pengeluaran pengguna. 
-Spesifikasi minimum untuk menjalankan aplikasi ini:
+
+## Requirements
 - Minimum API: **21**
 - Java version: **11 or 1.8 or up**
 
+## Installation
+- Clone this project
+- Open it in Android Studio
+- Build Gradle
 
 ## Screenshot of The App
 **Home**  
